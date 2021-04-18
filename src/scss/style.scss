@@ -1,0 +1,129 @@
+*{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+body {
+  background: linear-gradient(to left,#000428 ,#004e92);
+  color: #f8f8f8;
+}
+
+h1 {
+  color: #f8f8f8;
+  font-family: helvetica;
+  margin-top: 100px;
+}
+
+.project{
+	text-align: center;
+	width: 100%;
+    overflow: hidden;
+
+	.viewContainer{
+		margin: 50px auto 0px;
+		width: 90%;
+		ul.carouselContainer{
+			display: inline-block;	
+			vertical-align: middle;		
+			list-style-type: none;
+			width: 80%;
+    		margin: 0 auto;
+    		white-space : nowrap;
+    		height: 250px;
+    		transition : transform 1s;
+			.product{
+				width: 30%;
+			    height: 200px;
+			    display: inline-block;
+			    vertical-align: middle;
+			    margin-right: 5%;
+			    opacity: 0;
+			    transition: transform 1s, opacity 0.5s;
+			    color: darkslateblue;
+			    border-radius: 5px;
+    			font-weight: 600;
+    			padding: 5px;
+    			position: relative;
+				&.inView{
+					opacity: 1;
+				}
+				&.inView.selected{
+					transform : scale(1.2);
+					opacity: 1;
+				}
+
+				.bgImage{
+					background-repeat: no-repeat;
+	    			background-size: 100% 100%;
+	    			border-radius: 5px;
+	    			content: "";
+					opacity: 0.8;
+					top: 0;
+					left: 0;
+					bottom: 0;
+					right: 0;
+					position: absolute;
+					z-index: -1; 
+				}
+
+				.category{
+					position: absolute;
+				    bottom: 10px;
+				    left: 0;
+				    right: 0;
+				}
+			}			
+		}
+
+		.arrow{
+			display: inline-block;
+			vertical-align: middle;
+			font-size: 50px;
+			font-weight: 900;
+			width: 10%;
+			text-align: center;
+			cursor: pointer;
+			position: relative;
+			z-index: 1;
+			&.disabled{
+				opacity: 0.2;
+				cursor: not-allowed;
+			}
+		}
+	}
+
+	.categoriesContainer{
+		ul{
+			display: inline-block;
+			vertical-align: middle;
+			list-style-type: none;
+			width: 100%;
+			li.label{
+				display: inline-block;
+				vertical-align: middle;
+				margin-right: 20px;
+				font-size: 20px;
+	    		font-weight: 600;
+			}
+			li.categoryTag{
+				display: inline-block;
+				height: 40px;
+				line-height: 40px;
+				padding: 0px 7px;
+				border-radius: 10px;
+				border : 1px solid black;
+				background-color: #9ec183;
+				color: darkred;
+				margin-right: 10px;
+				font-size: 20px;
+				cursor: pointer;
+				min-width: 6%;
+				&.selected{
+					background-color: darkcyan;
+					color: white;
+					transform : scale(1.1);
+				}
+			}
+		}
+	}
+}
